@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { Image, Text, View, Button } from "react-native";
 import { styles } from "./Welcome.styles";
 
@@ -8,6 +9,8 @@ import wrenchScrewdriver from "../../assets/icons/wrench-screwdriver.svg";
 import dot from "../../assets/icons/dot.svg";
 
 const Welcome = () => {
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Water consumption tracker</Text>
@@ -32,6 +35,10 @@ const Welcome = () => {
       <View style={styles.btn}>
         <Text style={styles.btnText}>Try tracker</Text>
       </View>
+      <Button
+        title="Go to Login"
+        onPress={() => navigation.navigate("Signin")}
+      />
 
       <View style={styles.whyBlock}>
         <Text style={styles.whyTitle}>Why drink water</Text>
