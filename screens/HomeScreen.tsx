@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren } from "react";
 import { ImageBackground, StyleSheet } from "react-native";
+import Welcome from "../components/Welcome/Welcome";
 
 const HomeScreen: FC<PropsWithChildren> = ({ children }) => {
   return (
