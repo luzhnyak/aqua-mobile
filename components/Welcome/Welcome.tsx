@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 import { Image, Text, View, Button } from "react-native";
 import { styles } from "./Welcome.styles";
 
@@ -9,7 +9,7 @@ import wrenchScrewdriver from "../../assets/icons/wrench-screwdriver.svg";
 import dot from "../../assets/icons/dot.svg";
 
 const Welcome = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
@@ -35,10 +35,7 @@ const Welcome = () => {
       <View style={styles.btn}>
         <Text style={styles.btnText}>Try tracker</Text>
       </View>
-      <Button
-        title="Go to Login"
-        onPress={() => navigation.navigate("Signin")}
-      />
+      <Button title="Go to Login" onPress={() => router.push("/signin")} />
 
       <View style={styles.whyBlock}>
         <Text style={styles.whyTitle}>Why drink water</Text>
