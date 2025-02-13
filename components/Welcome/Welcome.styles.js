@@ -3,8 +3,8 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 280,
-    marginHorizontal: "auto",
+    width: "100%",
+    paddingHorizontal: 20,
   },
 
   title: {
@@ -17,7 +17,6 @@ export const styles = StyleSheet.create({
   },
 
   subtitle: {
-    marginBottom: 24,
     fontSize: 24,
     fontWeight: 400,
     lineHeight: 30,
@@ -26,6 +25,7 @@ export const styles = StyleSheet.create({
   // ==========================   benefits
 
   benefitsTitle: {
+    marginTop: 24,
     marginBottom: 12,
     fontSize: 18,
     fontWeight: 500,
@@ -46,6 +46,7 @@ export const styles = StyleSheet.create({
   benefitsImage: {
     width: 32,
     height: 32,
+    color: "#407bff",
   },
 
   benefitsText: {
@@ -55,13 +56,13 @@ export const styles = StyleSheet.create({
   },
 
   btn: {
-    marginBottom: 40,
+    marginBottom: 36,
     backgroundColor: "#407bff",
     borderRadius: 10,
-    width: 280,
-    height: 36,
+    width: "100%",
+    height: 44,
     paddingHorizontal: 30,
-    paddingVertical: 8,
+    justifyContent: "center",
   },
 
   btnText: {
@@ -74,11 +75,10 @@ export const styles = StyleSheet.create({
 
   // ==========================   whyBlock
   whyBlock: {
-    width: 280,
+    width: "100%",
     paddingHorizontal: 16,
-    paddingVertical: 24,
+    paddingVertical: 20,
     backgroundColor: "#ecf2ff",
-    marginHorizontal: "auto",
     borderRadius: 10,
   },
 
