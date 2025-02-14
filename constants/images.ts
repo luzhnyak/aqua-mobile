@@ -4,10 +4,10 @@ import DesktopBottleHomeScreen from "@/assets/images/desktop-bottle-home-screen.
 import DesktopBottleSignIn from "@/assets/images/desktop-bottle-sign-in.svg";
 import Logo from "@/assets/images/logo.svg";
 import MobileBackgroundElementHomeScreen from "@/assets/images/mobile-background-element-home-screen.svg";
-import MobileBackgroundElementSignIn from "@/assets/images/mobile-background-element-sign-in.svg";
+import BackgroundElementSignIn from "@/assets/images/background-element-sign-in.png";
 import MobileBackgroundMainPage from "@/assets/images/mobile-background-main-page.png";
 import MobileBottleHomeScreen from "@/assets/images/mobile-bottle-home-screen.svg";
-import MobileBottleSignIn from "@/assets/images/mobile-bottle-sign-in.svg";
+import BottleSignIn from "@/assets/images/bottle-sign-in.png";
 import TabletBackgroundElementHomeScreen from "@/assets/images/tablet-background-element-home-screen.svg";
 import TabletBackgroundMainPage from "@/assets/images/tablet-background-main-page.svg";
 import TabletBottleHomeScreen from "@/assets/images/tablet-bottle-home-screen.svg";
@@ -23,10 +23,10 @@ export default {
   DesktopBottleSignIn,
   Logo,
   MobileBackgroundElementHomeScreen,
-  MobileBackgroundElementSignIn,
+  BackgroundElementSignIn,
   MobileBackgroundMainPage,
   MobileBottleHomeScreen,
-  MobileBottleSignIn,
+  BottleSignIn,
   TabletBackgroundElementHomeScreen,
   TabletBackgroundMainPage,
   TabletBottleHomeScreen,
