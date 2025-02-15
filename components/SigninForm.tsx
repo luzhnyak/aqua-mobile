@@ -23,13 +23,13 @@ const SigninForm = ({ handleLogin, loading }: LoginFormProps) => {
     <View style={{ padding: 20 }}>
       <Text
         style={{
-          fontSize: 24,
+          fontSize: 26,
+          color: "#2F2F2F",
           fontWeight: "bold",
-          marginBottom: 20,
-          textAlign: "center",
+          marginBottom: 16,
         }}
       >
-        Авторизація
+        Sign In
       </Text>
       <FormField
         title="Email"
@@ -46,11 +46,11 @@ const SigninForm = ({ handleLogin, loading }: LoginFormProps) => {
         }
       />
       <CustomButton
-        title="Авторизуватися"
+        title="Sign In"
         handlePress={() => console.log("Кнопка натиснута")}
         isLoading={false}
-        containerStyles={{ marginTop: 20 }}
-        textStyles={{ fontSize: 20 }}
+        // containerStyles={{ marginTop: 20 }}
+        textStyles={{ fontSize: 18 }}
       />
       <View style={styles.container}>
         <Text style={styles.text}>Don't have an account?</Text>
@@ -64,10 +64,10 @@ const SigninForm = ({ handleLogin, loading }: LoginFormProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row", // flex-row
-    justifyContent: "center", // justify-center
-    paddingTop: 20, // pt-5 (5 * 4 = 20)
-    gap: 8, // gap-2 (2 * 4 = 8)
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop: 16,
+    gap: 8,
   },
   text: {
     fontSize: 18, // text-lg

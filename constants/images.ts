@@ -2,7 +2,7 @@ import DesktopBackgroundElementMainPage from "@/assets/images/desktop-background
 import DesktopBackgroundMainPage from "@/assets/images/desktop-background-main-page.svg";
 import DesktopBottleHomeScreen from "@/assets/images/desktop-bottle-home-screen.svg";
 import DesktopBottleSignIn from "@/assets/images/desktop-bottle-sign-in.svg";
-import Logo from "@/assets/images/logo.svg";
+import Logo from "@/assets/images/logo.png";
 import MobileBackgroundElementHomeScreen from "@/assets/images/mobile-background-element-home-screen.svg";
 import BackgroundElementSignIn from "@/assets/images/background-element-sign-in.png";
 import MobileBackgroundMainPage from "@/assets/images/mobile-background-main-page.png";

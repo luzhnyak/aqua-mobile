@@ -23,40 +23,40 @@ const SignoutForm = ({ handleLogin, loading }: LoginFormProps) => {
     <View style={{ padding: 20 }}>
       <Text
         style={{
-          fontSize: 24,
+          fontSize: 26,
+          color: "#2F2F2F",
           fontWeight: "bold",
-          marginBottom: 20,
-          textAlign: "center",
+          marginBottom: 16,
         }}
       >
-        Реєстрація
+        Sign Out
       </Text>
       <FormField
-        title="Ім'я"
+        title="Enter your name"
         value={formData.name}
-        placeholder="Enter your name"
+        placeholder="Name"
         handleChangeText={(e: string) => setFormData({ ...formData, name: e })}
       />
       <FormField
-        title="Email"
+        title="Enter your email"
         value={formData.email}
-        placeholder="Enter your email"
+        placeholder="Email"
         handleChangeText={(e: string) => setFormData({ ...formData, email: e })}
       />
       <FormField
         title="Password"
         value={formData.password}
-        placeholder="Enter your password"
+        placeholder="Password"
         handleChangeText={(e: string) =>
           setFormData({ ...formData, password: e })
         }
       />
       <CustomButton
-        title="Зареєструватися"
+        title="Sign Out"
         handlePress={() => console.log("Кнопка натиснута")}
         isLoading={false}
-        containerStyles={{ marginTop: 20 }}
-        textStyles={{ fontSize: 20 }}
+        // containerStyles={{ marginTop: 20 }}
+        textStyles={{ fontSize: 18 }}
       />
       <View style={styles.container}>
         <Text style={styles.text}>Already have an account?</Text>
@@ -70,20 +70,20 @@ const SignoutForm = ({ handleLogin, loading }: LoginFormProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row", // flex-row
-    justifyContent: "center", // justify-center
-    paddingTop: 20, // pt-5 (5 * 4 = 20)
-    gap: 8, // gap-2 (2 * 4 = 8)
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingTop: 16,
+    gap: 8,
   },
   text: {
-    fontSize: 18, // text-lg
-    color: "#333", // text-gray-100 (замініть на потрібний відтінок)
-    fontFamily: "Poppins-Regular", // font-pregular (замініть на ваш шрифт)
+    fontSize: 18,
+    color: "#333",
+    fontFamily: "Poppins-Regular",
   },
   link: {
-    fontSize: 18, // text-lg
-    color: "#001aff", // text-secondary (замініть на відповідний колір)
-    fontFamily: "Poppins-SemiBold", // font-psemibold
+    fontSize: 18,
+    color: "#001aff",
+    fontFamily: "Poppins-SemiBold",
   },
 });
 

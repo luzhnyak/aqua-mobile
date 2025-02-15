@@ -34,19 +34,21 @@ const CustomButton = ({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#0ea07b", // Замініть на реальний колір secondary
-    borderRadius: 12, // rounded-xl
-    minHeight: 62, // min-h-[62px]
+    backgroundColor: "#407BFF",
+    borderRadius: 12,
+    minHeight: 50,
     justifyContent: "center",
     alignItems: "center",
   },
   disabled: {
-    opacity: 0.5, // opacity-50
+    opacity: 0.5,
   },
   text: {
-    color: "#000000", // Замініть на реальний колір primary
-    fontFamily: "Poppins-SemiBold", // font-psemibold
-    fontSize: 18, // text-lg
+    color: "#fff",
+    fontFamily: "Poppins-SemiBold",
+    fontSize: 16,
+    textAlign: "center",
+    fontWeight: 500,
   },
 });
 

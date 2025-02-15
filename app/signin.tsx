@@ -1,35 +1,52 @@
-import { View, Text, ImageBackground, Image } from "react-native";
+import { View, Text, ImageBackground, Image, StyleSheet } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
 import SigninForm from "@/components/SigninForm";
 import images from "@/constants/images";
+import Header from "@/components/Header";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const signin = () => {
   return (
-    <ImageBackground
-      source={images.BackgroundElementSignIn}
-      style={{ width: "100%", height: "100%" }}
-      resizeMode="contain"
-    >
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <SigninForm handleLogin={console.log} />
-        <Link
-          href="/home"
-          style={{
-            padding: 10,
-            fontSize: 18,
-            color: "blue",
-          }}
-        >
-          Home
-        </Link>
-        <Image
+    <SafeAreaView style={{ flex: 1 }}>
+      <Header />
+      <ImageBackground
+        source={images.BackgroundElementSignIn}
+        style={styles.background}
+        resizeMode="contain"
+      >
+        <ImageBackground
           source={images.BottleSignIn}
-          style={{ width: 280, height: 210 }}
-        />
-      </View>
-    </ImageBackground>
+          style={styles.backgroundBottle}
+          imageStyle={styles.image}
+          resizeMode="cover"
+        >
+          <SigninForm handleLogin={console.log} />
+        </ImageBackground>
+      </ImageBackground>
+    </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+  backgroundBottle: {
+    flex: 1,
+  },
+  image: {
+    top: 440,
+    left: "50%",
+    transform: [{ translateX: "-50%" }],
+    width: 280,
+    height: 210,
+  },
+  content: {
+    flex: 1,
+    justifyContent: "flex-start",
+    alignItems: "center",
+  },
+});
 
 export default signin;

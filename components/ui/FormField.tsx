@@ -33,7 +33,7 @@ export default function FormField({
           style={styles.input}
           value={value}
           placeholder={placeholder}
-          placeholderTextColor={"#7b7b8b"}
+          placeholderTextColor={"#D7E3FF"}
           onChangeText={handleChangeText}
           secureTextEntry={title === "Password" && !showPassword}
         />
@@ -42,7 +42,7 @@ export default function FormField({
             <Ionicons
               name={!showPassword ? "eye" : "eye-off"}
               size={24}
-              color="#333"
+              color="#407BFF"
             />
           </TouchableOpacity>
         )}
@@ -52,25 +52,29 @@ export default function FormField({
 }
 
 const styles = StyleSheet.create({
-  container: { marginBottom: 24 },
-  title: { fontSize: 16, color: "#333", lineHeight: 24 },
+  container: { marginBottom: 16 },
+  title: { fontSize: 18, color: "#2F2F2F", lineHeight: 24, marginBottom: 8 },
   inputWrapper: {
-    width: "100%", // w-full
-    height: 64, // h-16 (16 * 4 = 64)
-    paddingHorizontal: 12, // px-4 (4 * 4 = 16)
-    backgroundColor: "#dfdcdc", // bg-black-100 (замініть на відповідний колір)
-    borderColor: "#333", // border-black-200 (замініть на відповідний колір)
+    width: "100%",
+    height: 50,
+    paddingHorizontal: 10,
+    // paddingVertical: 12,
+    backgroundColor: "#fff",
+    borderColor: "#D7E3FF",
     borderWidth: 1,
-    borderRadius: 8, // rounded-2xl
-    flexDirection: "row", // flex-row
-    alignItems: "center", // items-center
+    borderRadius: 8,
+    flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-between", // justify-between
   },
   input: {
+    // backgroundColor: "red",
     flex: 1, // flex-1
     color: "#333", // text-white
     fontFamily: "Poppins-SemiBold", // font-psemibold (замініть на відповідний шрифт)
-    fontSize: 20,
+    fontSize: 16,
+    lineHeight: 20,
+    // height: 20,
   },
   focused: {
     borderColor: "#FF6600", // focus:border-secondary (замініть на відповідний колір)
