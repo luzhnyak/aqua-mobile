@@ -1,5 +1,4 @@
-import XMarkOutline from "@/assets/icons/x-mark-outline.svg";
-import XMark from "@/assets/icons/x-mark.svg";
+import XMark from "@/assets/icons/x-mark.png";
 import WrenchScrewdriver from "@/assets/icons/wrench-screwdriver.png";
 import UserIcon from "@/assets/icons/user.svg";
 import Trash from "@/assets/icons/trash.svg";
@@ -30,7 +29,6 @@ import ArrowRightOnRectangle from "@/assets/icons/arrow-right-on-rectangle.svg";
 import ArrowLongLeft from "@/assets/icons/arrow-long-left.svg";
 
 export default {
-  XMarkOutline,
   XMark,
   WrenchScrewdriver,
   UserIcon,
