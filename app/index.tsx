@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import Welcome from "@/components/Welcome/Welcome";
+import Welcome from "@/components/Welcome";
 
 const index = () => {
   return (

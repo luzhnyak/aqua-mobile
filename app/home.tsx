@@ -15,7 +15,9 @@ const home = () => {
         style={styles.background}
         resizeMode="contain"
       >
-        <MyDailyNorma />
+        <View style={styles.content}>
+          <MyDailyNorma />
+        </View>
       </ImageBackground>
     </SafeAreaView>
   );
@@ -38,7 +40,8 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: "flex-start",
-    alignItems: "center",
+    alignItems: "flex-start",
+    padding: 20,
   },
 });
 

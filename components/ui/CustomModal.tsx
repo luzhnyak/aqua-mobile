@@ -1,32 +1,43 @@
 import { View, Text, Modal, StyleSheet, Pressable, Image } from "react-native";
 import React, { FC } from "react";
-import CustomButton from "./ui/CustomButton";
-import icons from "../constants/icons";
-import CustomModal from "./ui/CustomModal";
+import icons from "../../constants/icons";
 
-type ModalMyDailyNormaProps = {
+type CustomModalProps = {
+  title: string;
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  children: React.ReactNode;
 };
 
-const ModalMyDailyNorma: FC<ModalMyDailyNormaProps> = ({
+const CustomModal: FC<CustomModalProps> = ({
+  title,
   modalVisible,
   setModalVisible,
+  children,
 }) => {
   return (
-    <CustomModal
-      title="My Daily Norma"
-      modalVisible={modalVisible}
-      setModalVisible={setModalVisible}
+    <Modal
+      animationType="fade"
+      transparent={true}
+      visible={modalVisible}
+      onRequestClose={() => {
+        setModalVisible(!modalVisible);
+      }}
     >
-      <CustomButton
-        title="Save"
-        handlePress={() => setModalVisible(!modalVisible)}
-        isLoading={false}
-        containerStyles={{ with: 100 }}
-        textStyles={{ fontSize: 18 }}
-      />
-    </CustomModal>
+      <View style={styles.centeredView}>
+        <View style={styles.modalView}>
+          <View style={styles.conteiner}>
+            <View style={styles.titleWrapper}>
+              <Text style={styles.title}>{title}</Text>
+              <Pressable onPress={() => setModalVisible(!modalVisible)}>
+                <Image style={styles.btnCloseImage} source={icons.XMark} />
+              </Pressable>
+            </View>
+            {children}
+          </View>
+        </View>
+      </View>
+    </Modal>
   );
 };
 
@@ -55,6 +66,9 @@ const styles = StyleSheet.create({
   conteiner: {
     width: "100%",
   },
+  btnClose: {
+    padding: 4,
+  },
   btnCloseImage: {
     width: 24,
     height: 24,
@@ -72,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ModalMyDailyNorma;
+export default CustomModal;

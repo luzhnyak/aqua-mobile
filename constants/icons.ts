@@ -2,7 +2,6 @@ import XMark from "@/assets/icons/x-mark.png";
 import WrenchScrewdriver from "@/assets/icons/wrench-screwdriver.png";
 import UserIcon from "@/assets/icons/user.svg";
 import Trash from "@/assets/icons/trash.svg";
-// import SymbolDefs from "@/assets/icons/symbol-defs.svg";
 import RadioButtonCircle from "@/assets/icons/radio-button-circle.svg";
 import RadioButton from "@/assets/icons/radio-button.svg";
 import ProgressbarPlus from "@/assets/icons/progressbar-plus.svg";
@@ -33,7 +32,6 @@ export default {
   WrenchScrewdriver,
   UserIcon,
   Trash,
-  //   SymbolDefs,
   RadioButtonCircle,
   RadioButton,
   ProgressbarPlus,
