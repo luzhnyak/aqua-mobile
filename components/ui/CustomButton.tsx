@@ -34,6 +34,7 @@ const CustomButton = ({
 
 const styles = StyleSheet.create({
   button: {
+    width: "100%",
     backgroundColor: "#407BFF",
     borderRadius: 12,
     minHeight: 50,

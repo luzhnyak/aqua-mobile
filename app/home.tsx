@@ -1,10 +1,11 @@
 import { View, Text, ImageBackground, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "expo-router";
 import Header from "@/components/Header";
 import images from "@/constants/images";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MyDailyNorma from "@/components/MyDailyNorma";
+import AddWater from "@/components/AddWater";
 
 const home = () => {
   return (
@@ -17,6 +18,7 @@ const home = () => {
       >
         <View style={styles.content}>
           <MyDailyNorma />
+          <AddWater />
         </View>
       </ImageBackground>
     </SafeAreaView>
