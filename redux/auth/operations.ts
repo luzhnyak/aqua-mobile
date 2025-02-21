@@ -15,10 +15,10 @@ import {
 import { RootState } from "../store";
 import { IRegisterUser, IUpdateUser } from "../../types";
 import { handleApiError } from "../../services/handleApiError";
-import {
-  AsyncThunkConfig,
-  GetThunkAPI,
-} from "@reduxjs/toolkit/dist/createAsyncThunk";
+// import {
+//   AsyncThunkConfig,
+//   GetThunkAPI,
+// } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 export const signUpThunk = createAsyncThunk(
   "auth/register",
@@ -80,13 +80,13 @@ export const refreshTokensThunk = createAsyncThunk(
   }
 );
 
-type CustomThunkAPI = GetThunkAPI<AsyncThunkConfig> & {
-  rejectWithValue: (error: Error) => void;
-};
+// type CustomThunkAPI = GetThunkAPI<AsyncThunkConfig> & {
+//   rejectWithValue: (error: Error) => void;
+// };
 
 export const refreshCurrentUserThunk = createAsyncThunk(
   "auth/refresh",
-  async (_, thunkApi: CustomThunkAPI) => {
+  async (_, thunkApi) => {
     const state = thunkApi.getState() as RootState;
     const token = state.auth.token;
     try {
@@ -100,7 +100,7 @@ export const refreshCurrentUserThunk = createAsyncThunk(
   },
 
   {
-    condition: (_, thunkApi: CustomThunkAPI) => {
+    condition: (_, thunkApi: any) => {
       const state = thunkApi.getState() as RootState;
       const token = state.auth.token;
       if (!token) {
