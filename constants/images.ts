@@ -6,7 +6,7 @@ import Logo from "@/assets/images/logo.png";
 import MobileBackgroundElementHomeScreen from "@/assets/images/mobile-background-element-home-screen.svg";
 import BackgroundElementSignIn from "@/assets/images/background-element-sign-in.png";
 import MobileBackgroundMainPage from "@/assets/images/mobile-background-main-page.png";
-import MobileBottleHomeScreen from "@/assets/images/mobile-bottle-home-screen.svg";
+import BottleHome from "@/assets/images/bottle-home.png";
 import BottleSignIn from "@/assets/images/bottle-sign-in.png";
 import TabletBackgroundElementHomeScreen from "@/assets/images/tablet-background-element-home-screen.svg";
 import TabletBackgroundMainPage from "@/assets/images/tablet-background-main-page.svg";
@@ -25,7 +25,7 @@ export default {
   MobileBackgroundElementHomeScreen,
   BackgroundElementSignIn,
   MobileBackgroundMainPage,
-  MobileBottleHomeScreen,
+  BottleHome,
   BottleSignIn,
   TabletBackgroundElementHomeScreen,
   TabletBackgroundMainPage,

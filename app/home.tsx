@@ -1,4 +1,4 @@
-import { View, Text, ImageBackground, StyleSheet } from "react-native";
+import { View, Text, ImageBackground, StyleSheet, Image } from "react-native";
 import React, { useState } from "react";
 import { Link } from "expo-router";
 import Header from "@/components/Header";
@@ -18,6 +18,10 @@ const home = () => {
       >
         <View style={styles.content}>
           <MyDailyNorma />
+          <View style={styles.imageBottleWrapper}>
+            <Image source={images.BottleHome} style={styles.imageBottle} />
+          </View>
+
           <AddWater />
         </View>
       </ImageBackground>
@@ -38,6 +42,17 @@ const styles = StyleSheet.create({
     transform: [{ translateX: "-50%" }],
     width: 280,
     height: 210,
+  },
+  imageBottleWrapper: {
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 10,
+    marginBottom: 16,
+  },
+  imageBottle: {
+    width: 280,
+    height: 208,
   },
   content: {
     flex: 1,
