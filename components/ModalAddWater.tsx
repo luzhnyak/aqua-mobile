@@ -1,26 +1,27 @@
-import { View, Text, Modal, StyleSheet, Pressable, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { FC } from "react";
 import CustomButton from "./ui/CustomButton";
-import icons from "../constants/icons";
 import CustomModal from "./ui/CustomModal";
 
 type ModalAddWaterProps = {
   modalVisible: boolean;
   setModalVisible: (visible: boolean) => void;
+  isEditWater?: boolean;
 };
 
 const ModalAddWater: FC<ModalAddWaterProps> = ({
   modalVisible,
   setModalVisible,
+  isEditWater = false,
 }) => {
   return (
     <CustomModal
-      title="Add Water"
+      title={isEditWater ? "Edit Water" : "Add Water"}
       modalVisible={modalVisible}
       setModalVisible={setModalVisible}
     >
       <CustomButton
-        title="Save"
+        title={isEditWater ? "Save" : "Add Water"}
         handlePress={() => setModalVisible(!modalVisible)}
         isLoading={false}
         containerStyles={{ with: 100 }}
