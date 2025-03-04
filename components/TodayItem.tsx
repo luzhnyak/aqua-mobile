@@ -1,8 +1,11 @@
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import icons from "../constants/icons";
+import ModalAddWater from "./ModalAddWater";
 
 const TodayItem = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.wrapper}>
       <Image source={icons.Glass} style={styles.glassImage} />
@@ -11,13 +14,18 @@ const TodayItem = () => {
         <Text style={styles.time}>14:00 PM</Text>
       </View>
       <View style={styles.actionsWrapper}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Image style={styles.actionImage} source={icons.PencilSquare} />
         </TouchableOpacity>
         <TouchableOpacity>
           <Image style={styles.actionImage} source={icons.Trash} />
         </TouchableOpacity>
       </View>
+      <ModalAddWater
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+        isEditWater={true}
+      />
     </View>
   );
 };
