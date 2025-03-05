@@ -5,8 +5,22 @@ import SigninForm from "@/components/SigninForm";
 import images from "@/constants/images";
 import Header from "@/components/Header";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "@/redux/store";
+import { loginThunk } from "../redux/auth/operations";
 
 const signin = () => {
+  const dispatch: AppDispatch = useDispatch();
+
+  const handleLogin = (email: string, password: string) => {
+    try {
+      dispatch(loginThunk({ email, password }));
+      console.log("login success");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Header />
@@ -21,7 +35,7 @@ const signin = () => {
           imageStyle={styles.image}
           resizeMode="cover"
         >
-          <SigninForm handleLogin={console.log} />
+          <SigninForm handleLogin={handleLogin} />
         </ImageBackground>
       </ImageBackground>
     </SafeAreaView>

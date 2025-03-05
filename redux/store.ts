@@ -10,7 +10,7 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { authReducer, resetToken } from "./auth/slice";
 import { waterReducer } from "./waterConsumption/slice";
 import { refreshTokensThunk } from "./auth/operations";
@@ -18,7 +18,7 @@ import axios from "axios";
 
 const authConfig = {
   key: "auth",
-  storage,
+  storage: AsyncStorage,
   whitelist: ["token", "refreshToken"],
 };
 

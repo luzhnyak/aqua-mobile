@@ -13,7 +13,7 @@ import {
   refreshTokensApi,
 } from "../../services/waterApi";
 import { RootState } from "../store";
-import { IRegisterUser, IUpdateUser } from "../../types";
+import { ILoginUser, IRegisterUser, IUpdateUser } from "../../types";
 import { handleApiError } from "../../services/handleApiError";
 // import {
 //   AsyncThunkConfig,
@@ -35,7 +35,7 @@ export const signUpThunk = createAsyncThunk(
 
 export const loginThunk = createAsyncThunk(
   "auth/login",
-  async (formData: IRegisterUser, thunkApi) => {
+  async (formData: ILoginUser, thunkApi) => {
     try {
       const response = await requestUserLogin(formData);
       return response;

@@ -4,6 +4,9 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import "react-native-reanimated";
+import { Provider } from "react-redux";
+import { store, persistor } from "../redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 import React from "react";
 
@@ -26,14 +29,16 @@ export default function RootLayout() {
   }
 
   return (
-    <>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen name="signin" options={{ headerShown: false }} />
-        <Stack.Screen name="signout" options={{ headerShown: false }} />
-        <Stack.Screen name="home" options={{ headerShown: false }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen name="signin" options={{ headerShown: false }} />
+          <Stack.Screen name="signout" options={{ headerShown: false }} />
+          <Stack.Screen name="home" options={{ headerShown: false }} />
+        </Stack>
+        <StatusBar style="auto" />
+      </PersistGate>
+    </Provider>
   );
 }

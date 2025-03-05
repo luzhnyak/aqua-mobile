@@ -1,7 +1,7 @@
 import axios from "axios";
-import { IDdailyEntry, IRegisterUser, IUpdateUser } from "../types";
+import { IDdailyEntry, ILoginUser, IRegisterUser, IUpdateUser } from "../types";
 
-axios.defaults.baseURL = "https://luzhnyak-aws.pp.ua:82";
+axios.defaults.baseURL = "https://aqua-be.vercel.app";
 // axios.defaults.baseURL = "https://aqua-backend-ieu7.onrender.com";
 // axios.defaults.baseURL = "http://127.0.0.1:4001";
 
@@ -21,7 +21,7 @@ export const requestUserSignUp = async (formData: IRegisterUser) => {
   return data;
 };
 
-export const requestUserLogin = async (formData: IRegisterUser) => {
+export const requestUserLogin = async (formData: ILoginUser) => {
   const { data } = await axios.post("/users/login", formData);
   setToken(data.token);
   return data;
@@ -47,11 +47,15 @@ export const refreshTokensApi = async (oldRefreshToken: string) => {
 //==========================Update User Data
 
 export const updateUserAvatar = async (newAvatar: Blob) => {
-  const formData = new FormData();
-  formData.append("avatar", newAvatar);
-  const { data } = await axios.patch("users/avatar", formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
+  // const formData = new FormData();
+  // formData.append("avatar", newAvatar);
+  const { data } = await axios.patch(
+    "users/avatar",
+    { avatar: newAvatar },
+    {
+      headers: { "Content-Type": "multipart/form-data" },
+    }
+  );
   return data.avatarURL;
 };
 

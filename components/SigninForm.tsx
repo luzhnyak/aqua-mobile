@@ -19,6 +19,7 @@ const SigninForm = ({ handleLogin, loading }: LoginFormProps) => {
   const handleSubmit = () => {
     handleLogin(formData.email, formData.password);
   };
+
   return (
     <View style={{ padding: 20 }}>
       <Text
@@ -47,7 +48,7 @@ const SigninForm = ({ handleLogin, loading }: LoginFormProps) => {
       />
       <CustomButton
         title="Sign In"
-        handlePress={() => console.log("Кнопка натиснута")}
+        handlePress={handleSubmit}
         isLoading={false}
         // containerStyles={{ marginTop: 20 }}
         textStyles={{ fontSize: 18 }}
