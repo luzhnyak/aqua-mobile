@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
-import { loginThunk } from "../redux/auth/operations";
+import { loginThunk } from "../../redux/auth/operations";
 
 const signin = () => {
   const dispatch: AppDispatch = useDispatch();
