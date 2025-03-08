@@ -4,6 +4,7 @@ import images from "../constants/images";
 import { Link } from "expo-router";
 import { selectUser } from "@/redux/auth/selectors";
 import { useSelector } from "react-redux";
+import { UserLogo } from "./UserLogo";
 
 const Header = () => {
   // const autorized = useSelector(selectIsLoggedIn);
@@ -15,10 +16,7 @@ const Header = () => {
         <Image style={styles.logoImage} source={images.Logo} />
         <Text style={styles.logoText}>Tracker of Water</Text>
       </View>
-      {user && <Text>{user.name}</Text>}
-      <Link href="/home" style={styles.link}>
-        Home
-      </Link>
+      {user && <UserLogo user={user} />}
     </View>
   );
 };
@@ -26,7 +24,6 @@ const Header = () => {
 const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 20,
-    // backgroundColor: "#fff",
     width: "100%",
     height: 64,
     justifyContent: "space-between",
@@ -37,6 +34,7 @@ const styles = StyleSheet.create({
   logoWrapper: {
     flexDirection: "row",
     alignItems: "center",
+    gap: 4,
   },
 
   logoImage: {
@@ -44,14 +42,11 @@ const styles = StyleSheet.create({
     height: 48,
   },
 
-  nav: {},
-
   logoText: {
-    marginStart: 4,
     color: "#407bff",
     fontSize: 12,
-    width: 60,
-    textAlign: "center",
+    width: 76,
+    textAlign: "left",
     fontWeight: "bold",
     textTransform: "uppercase",
   },

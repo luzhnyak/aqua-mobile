@@ -11,18 +11,12 @@ import {
   refreshTokensThunk,
 } from "./operations";
 import { IError } from "../../services/handleApiError";
+import { IUser } from "@/types";
 
 export interface IAuthInitialState {
   token: string | null;
   refreshToken: string | null;
-  user: {
-    name: string | null;
-    email: string | null;
-    avatarURL: string | null;
-    waterRate: number | null;
-    gender: string | null;
-    createdAt: string | null;
-  };
+  user: IUser | null;
   isLoggedIn: boolean;
   isRefreshing: boolean;
   error: IError | null;
@@ -31,14 +25,7 @@ export interface IAuthInitialState {
 const authInitialState: IAuthInitialState = {
   token: null,
   refreshToken: null,
-  user: {
-    name: null,
-    email: null,
-    avatarURL: null,
-    waterRate: null,
-    gender: null,
-    createdAt: null,
-  },
+  user: null,
   isLoggedIn: false,
   isRefreshing: false,
   error: null,
@@ -95,14 +82,17 @@ const authSlice = createSlice({
         state.user = action.payload.user;
         state.isLoggedIn = true;
       })
-      .addCase(updateAvatarThunk.fulfilled, (state, action) => {
-        state.user.avatarURL = action.payload;
-      })
+      .addCase(
+        updateAvatarThunk.fulfilled,
+        (state, action: PayloadAction<string>) => {
+          if (state.user) state.user.avatarURL = action.payload;
+        }
+      )
       .addCase(updateUserInfoThunk.fulfilled, (state, action) => {
         state.user = { ...state.user, ...action.payload };
       })
       .addCase(updateWaterNormaThunk.fulfilled, (state, action) => {
-        state.user.waterRate = action.payload;
+        if (state.user) state.user.waterRate = action.payload;
       })
       .addCase(refreshTokensThunk.fulfilled, (state, action) => {
         state.token = action.payload.token;
