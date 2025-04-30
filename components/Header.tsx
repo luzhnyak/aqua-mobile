@@ -1,13 +1,11 @@
 import React from "react";
 import { Text, View, Image, StyleSheet } from "react-native";
 import images from "../constants/images";
-import { Link } from "expo-router";
 import { selectUser } from "@/redux/auth/selectors";
 import { useSelector } from "react-redux";
 import { UserLogo } from "./UserLogo";
 
 const Header = () => {
-  // const autorized = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
 
   return (

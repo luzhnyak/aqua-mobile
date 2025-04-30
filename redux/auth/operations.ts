@@ -15,10 +15,6 @@ import {
 import { RootState } from "../store";
 import { ILoginUser, IRegisterUser, IUpdateUser } from "../../types";
 import { handleApiError } from "../../services/handleApiError";
-// import {
-//   AsyncThunkConfig,
-//   GetThunkAPI,
-// } from "@reduxjs/toolkit/dist/createAsyncThunk";
 
 export const signUpThunk = createAsyncThunk(
   "auth/register",

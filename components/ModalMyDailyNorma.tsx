@@ -1,7 +1,7 @@
-import { View, Text, Modal, StyleSheet, Pressable, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import React, { FC } from "react";
 import CustomButton from "./ui/CustomButton";
-import icons from "../constants/icons";
+
 import CustomModal from "./ui/CustomModal";
 
 type ModalMyDailyNormaProps = {
